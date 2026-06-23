@@ -57,7 +57,7 @@ dot -version
 
 Se aparecer a versão do Graphviz, está tudo certo. O app vai detectá-lo automaticamente.
 
-> **Sem o Graphviz:** o diagrama é gerado em modo alternativo (Pillow puro), que funciona mas fica com layout mais simples.
+> **Sem o Graphviz:** o diagrama é gerado em modo alternativo (Pillow puro), funcionando, mas com layout mais simples.
 
 ---
 
