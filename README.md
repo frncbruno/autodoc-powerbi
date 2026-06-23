@@ -155,9 +155,15 @@ Eliminar o trabalho manual de documentação de projetos Power BI, tornando a cr
 
 ## 📷 Exemplo
 
-<p align="center">
-  <img src="images/interface.png" width="700">
-</p>
+<img width="716" height="921" alt="image" src="https://github.com/user-attachments/assets/9d7c037d-e7a5-4902-8473-00d23449ae8e" />
+
+<img width="691" height="501" alt="image" src="https://github.com/user-attachments/assets/f81f803b-da01-4627-83c2-99cfc227aafe" />
+
+<img width="519" height="644" alt="image" src="https://github.com/user-attachments/assets/05e2e316-b60e-4b1a-b874-e03f879b2f90" />
+
+<img width="515" height="615" alt="image" src="https://github.com/user-attachments/assets/edf016a9-4224-4c5f-b026-127c6d09b49a" />
+
+
 
 ---
 
