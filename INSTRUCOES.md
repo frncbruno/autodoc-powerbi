@@ -1,72 +1,82 @@
-# Como gerar o DocumentadorPBIX.exe
+# Documentador de PBIX 1.0 — Instruções de uso
 
-### 👤 Caso queira gerar um .exe para enviar aos seus colegas de trabalho facilmente, faça o passo a passo abaixo. Caso contrário, leia README.md e siga os passos, precisando apenas compilar o código no próprio VS Code (ou outra IDE) e desfrutar.
+## Baixando o programa
 
-## Pré-requisito único: Python 3.10 ou superior
+1. Acesse o link do Drive [clicando aqui](https://drive.google.com/file/d/1MYiRkUvUYx9yP7Bu23SBWDcnl82clc-u/view?usp=sharing)
+2. Baixe o arquivo `DocumentadorPBIX.exe`
+3. Salve em qualquer pasta do seu computador (ex: `Documentos`)
 
-1. Acesse https://www.python.org/downloads/
-2. Baixe e instale o Python 3.10+ para Windows
-3. **Marque a opção "Add Python to PATH"** durante a instalação
-
----
-
-## Gerando o EXE (uma única vez)
-
-1. Coloque todos os arquivos desta pasta em um local de sua preferência
-2. Clique duas vezes em **`BUILD_EXE.bat`**
-3. O script vai:
-   - Instalar todas as dependências automaticamente
-   - Gerar o `DocumentadorPBIX.exe` dentro da pasta `dist\`
-4. A pasta `dist\` abrirá automaticamente ao final
-
-**O processo leva entre 2 e 5 minutos** na primeira vez (baixa dependências e compila).
+> Não é necessário instalar nada. Basta baixar e abrir o `.exe`.
 
 ---
 
-## Distribuindo para os colegas
+## Usando o programa
 
-Após o build, basta enviar o arquivo:
+### 1. Selecionar o arquivo .pbix
 
-```
-dist\DocumentadorPBIX.exe
-```
+Clique em **"Selecionar arquivo..."** e escolha o arquivo `.pbix` que deseja documentar.
 
-Os colegas **não precisam ter Python instalado**. Basta baixar e executar o `.exe`.
+### 2. Identidade visual (opcional)
+
+- **Logotipo da capa:** adicione a logo da empresa em formato `.png` ou `.jpg`
+- **Pasta de screenshots:** se quiser incluir prints das páginas do relatório no PDF, selecione a pasta onde eles estão salvos
+
+### 3. Cores do documento (opcional)
+
+Personalize as cores do PDF digitando os códigos hexadecimais (ex: `#1B3A5C`).
+As cores padrão já seguem a identidade visual da empresa.
+
+### 4. Textos da capa (opcional)
+
+Preencha os campos de texto grande, médio e pequeno para personalizar a capa do PDF.
+Se deixar em branco, o programa usa valores padrão automaticamente.
+
+### 5. Seções incluídas no PDF
+
+Marque ou desmarque as seções que deseja incluir na documentação:
+
+- **Resumo geral e estatísticas** — visão macro do modelo
+- **Visão geral das tabelas** — lista de tabelas e quantidade de colunas
+- **Colunas por tabela** — detalhamento de cada coluna e seu tipo de dado
+- **Relacionamentos** — como as tabelas se conectam entre si
+- **Medidas DAX** — todas as medidas criadas no modelo
+- **Diagrama do modelo** — diagrama visual de relacionamentos
+- **Páginas, visuais e screenshots** — lista de páginas e visuais do relatório
+
+### 6. Gerar a documentação
+
+Clique em **"Gerar Documentação (PDF)"**, escolha onde salvar e aguarde.
+O PDF abre automaticamente ao finalizar.
 
 ---
 
-## Graphviz (opcional — melhora o diagrama de relacionamentos)
+## Dicas
 
-O app funciona sem o Graphviz, mas o diagrama gerado fica mais bonito e organizado com ele instalado.
-
-### Instalando o Graphviz no Windows
-
-1. Acesse https://graphviz.org/download/
-2. Em **Windows**, baixe o instalador `.exe` (ex: `windows_10_cmake_Release_graphviz-install-x.xx.x-win64.exe`)
-3. Execute o instalador
-4. Na tela **"Select Additional Tasks"**, marque a opção:
-   - ✅ **Add Graphviz to the system PATH for all users**
-   - (ou "for current user", qualquer uma serve)
-5. Conclua a instalação
-
-### Verificando se funcionou
-
-Abra o Prompt de Comando (`Win + R` → digite `cmd` → Enter) e execute:
-
-```
-dot -version
-```
-
-Se aparecer a versão do Graphviz, está tudo certo. O app vai detectá-lo automaticamente.
-
-> **Sem o Graphviz:** o diagrama é gerado em modo alternativo (Pillow puro), funcionando, mas com layout mais simples.
+- As configurações de cores e tamanhos são salvas automaticamente entre sessões
+- O botão **"Abrir Pasta"** abre a pasta onde o PDF foi salvo
+- Para documentar vários relatórios, basta trocar o arquivo `.pbix` e gerar novamente
 
 ---
 
-## Observações
+## Diagrama de relacionamentos
 
-- O EXE foi compilado para Windows 64-bit. Computadores com Windows 32-bit
-  precisarão de build separado (raro atualmente).
+O diagrama é gerado automaticamente. Para uma qualidade visual melhor, instale o **Graphviz**:
 
-- Se o antivírus bloquear o `.exe`, é falso positivo comum com PyInstaller.
-  Adicione uma exceção ou use a opção "Executar assim mesmo".
+1. Acesse https://graphviz.org/download/ e baixe o instalador para Windows
+2. Durante a instalação, marque ✅ **"Add Graphviz to the system PATH for all users"**
+3. Reinicie o programa após instalar
+
+Sem o Graphviz, o diagrama ainda é gerado normalmente, só com um layout mais simples.
+
+---
+
+## Problemas comuns
+
+**O antivírus bloqueou o .exe**
+Falso positivo comum com programas gerados em Python. Clique em "Mais informações" → "Executar assim mesmo", ou adicione uma exceção no antivírus.
+
+**O programa demorou para abrir**
+Normal na primeira execução. A partir da segunda abre mais rápido.
+
+**Erro ao processar o .pbix**
+Certifique-se de que o arquivo não está aberto no Power BI Desktop durante a geração.
