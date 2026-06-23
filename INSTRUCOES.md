@@ -1,6 +1,6 @@
 # Como gerar o DocumentadorPBIX.exe
 
-## 👤 Caso queira gerar um .exe para enviar aos seus colegas de trabalho facilmente, faça o passo a passo abaixo. Caso contrário, leia README.md e siga os passos, precisando apenas compilar o código no próprio VS Code (ou outra IDE) e desfrutar.
+### 👤 Caso queira gerar um .exe para enviar aos seus colegas de trabalho facilmente, faça o passo a passo abaixo. Caso contrário, leia README.md e siga os passos, precisando apenas compilar o código no próprio VS Code (ou outra IDE) e desfrutar.
 
 ## Pré-requisito único: Python 3.10 ou superior
 
